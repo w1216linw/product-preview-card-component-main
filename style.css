@@ -1,0 +1,116 @@
+:root {
+  --primary-color-6: hsl(158, 36%, 20%);
+  --primary-color-4: hsl(158, 36%, 37%);
+  --primary-color-1: hsl(30, 38%, 92%);
+
+  --neutral-color-9: hsl(212, 21%, 14%);
+  --neutral-color-4: hsl(228, 12%, 48%);
+  --neutral-color-1: hsl(0, 0%, 100%);
+
+  --ff-2: 'Montserrat';
+  --ff-1: 'Fraunces';
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Global Styles */
+
+body {
+  font-size: .875rem;
+  font-weight: var(--fw-regular);
+  font-family: var(--ff-2);
+  color: var(--neutral-color-4);
+  background-color: var(--primary-color-1);
+  margin: 1rem;
+
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.btn {
+  height: 3rem;
+  font-weight: var(--fw-bold);
+  color: var(--neutral-color-1);
+  background-color: var(--primary-color-4);
+  border-radius: .5rem;
+  padding: .5em 1.5em;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+
+.btn:is(:hover, :active) {
+  background-color: var(--primary-color-6);
+}
+
+
+/* Preview Product */
+.product__container {
+  --content-padding: 1.5rem;
+
+  display: grid;
+  max-width: 600px;
+  border-radius: .875rem;
+  overflow: hidden;
+}
+
+@media (min-width: 600px){
+  .product__container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.product__contents {
+  
+  display: grid;
+  padding: var(--content-padding);
+  background-color: var(--neutral-color-1);
+  gap: 1rem;
+}
+
+.product__category {
+  letter-spacing: 5px;
+}
+
+.product__title {
+  font-family: var(--ff-1);
+  font-weight: var(--fw-bold);
+  font-size: 2rem;
+  color: var(--neutral-color-9);
+  line-height: 1;
+}
+
+.product__description {
+  line-height: 1.5;
+}
+
+.product__prices {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.product__current-price {
+  font-size: 2rem;
+  font-family: var(--ff-1);
+  color: var(--primary-color-4);
+}
+
+
